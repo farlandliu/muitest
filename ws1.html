@@ -13,9 +13,11 @@
     <script type="text/javascript">
         // H5 plus事件处理
         function plusReady(){
-    var ws = plus.webview.create("ws2.html","",{top:"46px",bottom:"0px"});
-    plus.webview.currentWebview().append(ws);
-}
+            setTimeout(function(){
+                var ws = plus.webview.create("ws2.html");
+                ws.show();
+            },3000)
+        }
         if(window.plus){
             plusReady();
         }else{
