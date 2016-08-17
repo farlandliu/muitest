@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript" charset="utf-8">
+        var ws=null,nw=null,canback=null,canforward=null,i=0;
+        function plusReady(){
+            ws=plus.webview.currentWebview();
+            nw=plus.webview.create("http://www.snailradio.top/fm");
+            ws.append(nw);
+            plus.key.addEventListener("backbutton",function(){
+                //查询Webview窗口是否可后退
+                nw.canBack( function(e){
+                    canback=e.canBack;
+                    console.log("canback:"+canback);
+                });
+                //查询Webview窗口是否可前进
+                nw.canForward( function(e){
+                    canforward=e.canForward;
+                    console.log("canforward:"+canforward);
+                });
+                //当进入以后的逻辑判断
+                if(canback){
+                    nw.back();
+                }else{
+                    if(canforward){
+                        exit();
+                        return;
+                    }else{
+                        i++;
+                        if(i>1){
+                            exit();
+                        }    
+                    }
+                }
+            });
+        }
+        
+        function exit(){
+            // 弹出提示信息对话框
+            plus.nativeUI.confirm( "您想要退出吗？", function(e){
+                if(e.index==0){
+                    plus.runtime.quit();
+                }
+            }, "您想要退出吗？", ["Yes","No"] );
+        }
+        
+        if(window.plus){
+            plusReady();
+        }else{
+            document.addEventListener("plusready",plusReady,false);
+        }
+    </script>
+</body>
+</html>

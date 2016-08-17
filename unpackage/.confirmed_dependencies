@@ -1,0 +1,25 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"ws1.html"
+		]
+	},
+	"ws1.html": {
+		"refer": [
+			"ws2.html"
+		],
+		"resources": [
+			"ws2.html"
+		]
+	},
+	"ws2.html": {
+		"resources": [
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	}
+}
