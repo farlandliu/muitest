@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+<script type="text/javascript" src="../js/mui.js">
+	
+</script>
+<script type="text/javascript">
+	var ia = {app: {}};
+	ia.env = 'PROD';
+	
+ia.messages = {
+	data: [],
+	sendMessage: function(){
+		alert("hello message")
+	},
+	init : function(){
+		console.log("message.init")
+	}
+}
+
+ia.app = {
+	init: function(){
+		console.log("app.init");
+		ia.messages.init();
+	}
+}
+
+ia.app.init();
+
+mui.ajax({
+     //请求类型，这里为POST
+     type: 'GET',
+     //你要请求的api的URL
+     url: 'http://www.snailradio.top/fm/json/?action=&ch=193' ,
+     //是否使用缓存
+     cache:false,
+     //数据类型，这里我用的是json
+     dataType: "json", 
+     //必要的时候需要用JSON.stringify() 将JSON对象转换成字符串
+     //data: JSON.strigify({key:value}), //data: {key:value}, 
+     //添加额外的请求头
+     headers : {'Access-Control-Allow-Origin':'*'},
+     //请求成功的回调函数
+     success: function(data){
+        console.log(data)
+},
+});
+</script>
+</html>

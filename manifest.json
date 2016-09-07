@@ -187,7 +187,7 @@
 					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
 					"xxhdpi": ""
 				}
-			}
+			},"debug":false
 		}
 	},
 	"dependencies": {
@@ -195,7 +195,8 @@
 			"index.html": {
 				"resources": [
 					"js/mui.min.js",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"www_ia/index.html"
 				],
 				"refer": [
 					"ws1.html"
@@ -216,12 +217,87 @@
 				],
 				"refer": [],
 				"priority": 0
+			},
+			"www_weather/index.html": {
+				"resources": [
+					"www_weather/img/yahoo-logo.png",
+					"www_weather/libs/framework7/dist/css/framework7.material.colors.css",
+					"www_weather/js/weather7.js",
+					"www_weather/libs/framework7/dist/js/framework7.js",
+					"www_weather/css/weather7.css",
+					"www_weather/libs/framework7/dist/css/framework7.material.css",
+					"www_weather/img/delete.svg",
+					"js/mui.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"www_ia/index.html": {
+				"resources": [
+					"www_ia/js/init.js",
+					"www_ia/i/intro-employers/2.jpg",
+					"www_ia/i/intro-employers/9.jpg",
+					"www_ia/js/messages.js",
+					"www_ia/js/share.js",
+					"www_ia/js/employer.js",
+					"www_ia/js/intro-screen.js",
+					"www_ia/js/map.js",
+					"www_ia/js/views.js",
+					"www_ia/css/ionicons.css",
+					"www_ia/js/app.js",
+					"www_ia/js/user.js",
+					"www_ia/js/errors.js",
+					"www_ia/js/login-screen.js",
+					"www_ia/i/intro-jobs/omni.jpg",
+					"www_ia/js/template7-helpers.js",
+					"www_ia/i/intro-jobs/arkk.jpg",
+					"www_ia/js/leanplum.js",
+					"www_ia/i/intro-employers/4.jpg",
+					"www_ia/js/opportunity.js",
+					"www_ia/js/bookmarks.js",
+					"www_ia/js/libs/framework7.js",
+					"www_ia/css/framework7.material.colors.css",
+					"www_ia/i/intro-employers/1.jpg",
+					"www_ia/js/calendar.js",
+					"www_ia/css/app.css",
+					"www_ia/i/intro-jobs/btl.jpg",
+					"www_ia/fonts/ionicons.ttf",
+					"www_ia/i/intro-jobs/field.jpg",
+					"www_ia/i/intro-employers/3.png",
+					"www_ia/i/logo-blue.svg",
+					"www_ia/i/intro-employers/8.png",
+					"www_ia/i/intro-jobs/oliver.jpg",
+					"www_ia/i/intro-employers/7.jpg",
+					"www_ia/i/intro-employers/6.png",
+					"www_ia/js/search.js",
+					"www_ia/js/rate.js",
+					"www_ia/i/intro-jobs/wemake.jpg",
+					"www_ia/i/intro-employers/12.jpg",
+					"www_ia/i/intro-jobs/clean.jpg",
+					"www_ia/i/intro-jobs/lloyds.jpg",
+					"www_ia/js/auth.js",
+					"www_ia/i/intro-jobs/vector.jpg",
+					"www_ia/fonts/MaterialIcons-Regular.woff2",
+					"www_ia/i/intro-jobs/caxis.jpg",
+					"www_ia/i/intro-screen.jpg",
+					"www_ia/i/intro-employers/11.jpg",
+					"www_ia/js/libs/moment.min.js",
+					"www_ia/css/framework7.material.css",
+					"www_ia/i/intro-employers/10.jpg",
+					"www_ia/js/user-edit.js",
+					"www_ia/js/applications.js",
+					"www_ia/js/push.js",
+					"www_ia/js/libs/lodash.core.min.js",
+					"www_ia/i/intro-employers/5.jpg",
+					"js/mui.js"
+				],
+				"refer": [],
+				"priority": 0
 			}
 		},
 		"idle": {
 			"resources": [
 				"fonts/mui.ttf",
-				"js/mui.js",
 				"css/mui.css"
 			]
 		}

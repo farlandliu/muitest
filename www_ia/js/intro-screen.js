@@ -12,12 +12,12 @@ ia.intro = {
     close: function () {
         app.closeModal(ia.intro.container);
         localStorage.iaIntroShown = '1';
-        ia.segment.screen('Opportunities');
+        //ia.segment.screen('Opportunities');
     },
     hide: function () {
         ia.intro.container.removeClass('modal-in').trigger('closed');
         localStorage.iaIntroShown = '1';
-        ia.segment.screen('Opportunities');
+        //ia.segment.screen('Opportunities');
     },
     init: function () {
         // Intro Swiper
@@ -34,7 +34,7 @@ ia.intro = {
                 }, 100);
             },
             onSlideChangeEnd: function (s) {
-                ia.segment.screen('Opening Teaser ' + (s.activeIndex + 1));
+                //ia.segment.screen('Opening Teaser ' + (s.activeIndex + 1));
             }
         });
 

@@ -2,7 +2,7 @@
 Segment Anayltics
 ==============================================*/
 ia.segment = {
-    api: 'https://api.segment.io/v1/',
+    api: "127.0.0.1", //'https://api.segment.io/v1/',
     key: (function(){
         if (ia.env === 'DEV') {
             // DEV Key

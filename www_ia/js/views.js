@@ -54,7 +54,7 @@ ia.views = {
                 right = ia.user.navbarRight();
             }
 
-            ia.segment.screen(screenName);
+            //ia.segment.screen(screenName);
 
             // Update
             $('.page[data-page="home"] .navbar .center').text(title);

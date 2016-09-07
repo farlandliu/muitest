@@ -10,7 +10,7 @@
         var ws=null,nw=null,canback=null,canforward=null,i=0;
         function plusReady(){
             ws=plus.webview.currentWebview();
-            nw=plus.webview.create("http://www.snailradio.top/fm");
+            nw=plus.webview.create("www_ia/index.html");
             ws.append(nw);
             plus.key.addEventListener("backbutton",function(){
                 //查询Webview窗口是否可后退

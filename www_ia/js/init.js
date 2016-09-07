@@ -1,5 +1,6 @@
 /* ============================================
 ** App Init
+* 修改INIT, 去掉CORDOVA
 ============================================ */
 ia.app = {
     /* ============================================
@@ -21,7 +22,7 @@ ia.app = {
         // Init Search
         ia.search.init();
         // Init Messages
-        ia.messages.init();
+        //ia.messages.init();
         // Init User Profile Edit
         ia.userEdit.init();
         // Init Employer Profile
@@ -33,11 +34,11 @@ ia.app = {
         // Init Bookmarks
         ia.bookmarks.init();
         // Init Shares
-        ia.share.init();
+        //ia.share.init();
         // Init Map
-        ia.map.init();
+        //ia.map.init();
         // Init Rating
-        ia.rate.init();
+        //ia.rate.init();
         // Init Segment
         ia.segment.init();
     },
@@ -45,14 +46,15 @@ ia.app = {
     ** Check for online connection
     ============================================ */
     isOnline: function () {
-        if (!window.Connection) return true;
-        return Connection.NONE !== navigator.connection.type;
+//      if (!window.Connection) return true;
+//      return Connection.NONE !== navigator.connection.type;
+	return true;
     },
     /* ============================================
     ** Check is Cordova
     ============================================ */
-    isCordova: function () {
-        return /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent);
+    isCordova: function () { return true;
+//      return /^file:\/{3}[^\/]/i.test(window.location.href) && /ios|iphone|ipod|ipad|android/i.test(navigator.userAgent);
     },
     /* ============================================
     ** Update all data
@@ -186,21 +188,21 @@ ia.app = {
     /* ============================================
     ** Device ready, app launch
     ============================================ */
-    deviceIsReady: false,
+    deviceIsReady: true,
     onDeviceReady: function (e) {
         ia.app.deviceIsReady = true;
         // IA Device UUID
-        if (window.device) {
-            ia.app.uuid = device.uuid;
-        }
-
-        if (ia.app.isCordova()) {
-            // Init Push Notifications
-            ia.push.init();
-
-            // Init LeanPlum
-            ia.leanplum.init();
-        }
+//      if (window.device) {
+//          ia.app.uuid = device.uuid;
+//      }
+		ia.app.uuid = "ios";
+//      if (ia.app.isCordova()) {
+//          // Init Push Notifications
+//          ia.push.init();
+//
+//          // Init LeanPlum
+//          ia.leanplum.init();
+//      }
 
         // Init App
         ia.app.init();
@@ -229,6 +231,7 @@ ia.app = {
 ** Device ready, app launch
 ============================================ */
 if (ia.app.isCordova()) {
+	ia.app.onDeviceReady();
     $(document).on('deviceready', ia.app.onDeviceReady, false);
     $(document).on('backbutton', ia.app.onBackButton, false);
     $(document).on('resume', ia.app.onResume, false);
